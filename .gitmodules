@@ -1,0 +1,3 @@
+[submodule "submodule/antwar"]
+	path = submodule/antwar
+	url = https://github.com/antwarjs/antwar.git
