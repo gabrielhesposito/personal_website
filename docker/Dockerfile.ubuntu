@@ -1,0 +1,16 @@
+From ubuntu:latest
+## dev box
+
+##
+## dependency
+RUN apt-get install -y wget git
+
+##
+## server
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb
+
+##
+## install
+RUN dpkg -i hugo_0.26_Linux-64bit.deb
+
+
