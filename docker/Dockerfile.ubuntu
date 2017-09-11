@@ -28,6 +28,9 @@ RUN if $SYNTAX -eq "YES"; then  pip install pygments; else echo "no syntax"; fi
 RUN hugo gen autocomplete
 
 ##
+## _get_comp_words_by_ref command not found ? ^^ hugo_gen_autocomplete wont work
+
+##
 ## folder to place stuff
 RUN mkdir -p  /usr/share/nginx/mysiteprod
 
