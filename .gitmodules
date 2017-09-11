@@ -1,3 +1,6 @@
 [submodule "submodule/antwar"]
 	path = submodule/antwar
 	url = https://github.com/antwarjs/antwar.git
+[submodule "site_root/themes/hugo-theme-nix"]
+	path = site_root/themes/hugo-theme-nix
+	url = git@github.com:LordMathis/hugo-theme-nix.git
