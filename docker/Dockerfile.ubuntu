@@ -1,9 +1,11 @@
 From ubuntu:latest
 ## dev box
+ARG SYNTAX
 
 ##
 ## dependency
-RUN apt-get install -y wget git
+Run apt-get update
+RUN apt-get install -y wget git python-pip
 
 ##
 ## server
@@ -12,5 +14,29 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linu
 ##
 ## install
 RUN dpkg -i hugo_0.26_Linux-64bit.deb
+
+##
+## syntax highlighting?
+RUN if $SYNTAX -eq "YES"; then  pip install pygments; else echo "no syntax"; fi
+
+##
+## large dependency only bring if ALL themes wanted
+#RUN git clone --recursive https://github.com/spf13/hugoThemes ~/themes
+
+##
+## complete hugo install?
+RUN hugo gen autocomplete
+
+##
+## folder to place stuff
+RUN mkdir -p  /usr/share/nginx/mysiteprod
+
+##
+## make an image from desktop
+COPY build/ /usr/share/nginx/mysiteprod
+
+##
+## default location
+WORDKDIR "/usr/share/nginx/mysiteprod"
 
 
