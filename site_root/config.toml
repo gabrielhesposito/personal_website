@@ -1,3 +1,15 @@
-baseURL = "http://example.org/"
+baseURL = "http://172.17.0.2/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+theme = "hugo-theme-nix"
+[params]
+  GithubID = "your_github"
+  #LinkedInID = "your_linkedin"
+  Name = "gespo"
+  HeaderUsername = "username"
+  HeaderHostname = "hostname"
+  Email = "your_email"
+  About = "info_about_you"
+  ProfilePicture = "profile_picture_url"
+
+
