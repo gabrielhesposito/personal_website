@@ -1,45 +1,45 @@
 From ubuntu:latest
 ## dev box
 ARG SYNTAX
-
 ##
-## dependency
-Run apt-get update
+## dependency for hugo
+RUN apt-get update
 RUN apt-get install -y wget git python-pip
-
+##
+## 
+RUN apt-get install -y nginx
 ##
 ## server
 RUN wget https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb
-
 ##
 ## install
 RUN dpkg -i hugo_0.26_Linux-64bit.deb
-
 ##
 ## syntax highlighting?
 RUN if $SYNTAX -eq "YES"; then  pip install pygments; else echo "no syntax"; fi
-
 ##
 ## large dependency only bring if ALL themes wanted
 #RUN git clone --recursive https://github.com/spf13/hugoThemes ~/themes
-
 ##
 ## complete hugo install?
 RUN hugo gen autocomplete
-
 ##
 ## _get_comp_words_by_ref command not found ? ^^ hugo_gen_autocomplete wont work
-
 ##
 ## folder to place stuff
-RUN mkdir -p  /usr/share/nginx/mysiteprod
-
+RUN mkdir -p  /usr/share/nginx/mysiteprod 
+##
+## nginx for site
+COPY default /etc/nginx/sites-available/default
 ##
 ## make an image from desktop
-COPY build/ /usr/share/nginx/mysiteprod
-
+COPY build/public/ /usr/share/nginx/mysiteprod
+##
+##
+RUN chown -R www-data:www-data /usr/share/nginx/mysiteprod && chmod -R 0550 /usr/share/nginx/mysiteprod
 ##
 ## default location
-WORDKDIR "/usr/share/nginx/mysiteprod"
-
-
+WORKDIR "/usr/share/nginx/mysiteprod" 
+##
+## start nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
