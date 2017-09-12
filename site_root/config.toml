@@ -1,4 +1,4 @@
-baseURL = "http://172.17.0.3/"
+baseURL = "http://172.17.0.2/"
 languageCode = "en-us"
 title = "gespo"
 theme = "hugo-theme-nix"
@@ -6,9 +6,13 @@ theme = "hugo-theme-nix"
 
 [menu]
   [[menu.header]]
+    name = "this_site"
+    weight = 0
+    url = "https://github.com/gabrielhesposito/personal_website"
+  [[menu.header]]
     name = "resume"
     weight = 1
-    url = "/resume"
+    url = "/docs/resume.pdf"
 
 
 [params]
@@ -18,7 +22,7 @@ theme = "hugo-theme-nix"
   HeaderUsername = "gitusername"
   HeaderHostname = "github"
   Email = "gitusernameplusgithub@gmail.com"
-  About = "Debian at home, CentOS at work"
-  ProfilePicture = "pics/profile_pic.png"
+  About = "No CSS/HTML skills  →  GNU/Linux Engineer ~~~~~ Debian at home, CentOS at work ~~~~~"
+  ProfilePicture = "/pics/profile_pic.png"
 
 
