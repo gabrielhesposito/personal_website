@@ -33,7 +33,9 @@ RUN mkdir -p  /usr/share/nginx/mysiteprod
 COPY default /etc/nginx/sites-available/default
 ##
 ## make an image from desktop
-COPY build/public/ /usr/share/nginx/mysiteprod
+COPY build/ /tmp/
+RUN cd /tmp && hugo && mv /tmp/public/* /usr/share/nginx/mysiteprod || echo "build didn't happen or bad dir"
+#COPY build/public/ /usr/share/nginx/mysiteprod
 ##
 ##
 RUN chown -R www-data:www-data /usr/share/nginx/mysiteprod && chmod -R 0550 /usr/share/nginx/mysiteprod
