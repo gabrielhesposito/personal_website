@@ -37,8 +37,9 @@ COPY build/ /tmp/
 RUN cd /tmp && hugo && mv /tmp/public/* /usr/share/nginx/mysiteprod || echo "build didn't happen or bad dir"
 #COPY build/public/ /usr/share/nginx/mysiteprod
 ##
-##
+## set nginx static content permissions / log permissions for another process/user to read
 RUN chown -R www-data:www-data /usr/share/nginx/mysiteprod && chmod -R 0550 /usr/share/nginx/mysiteprod
+RUN chmod 0644 /var/log/nginx/access.log /var/log/nginx/error.log
 ##
 ## default location
 WORKDIR "/usr/share/nginx/mysiteprod" 
