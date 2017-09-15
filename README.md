@@ -13,5 +13,6 @@ The two containers share a common volume
 
 #### SaaS service
 
+## Deployment
 ##### thoughts 
 using bash for deployment is a terrible idea, the however the docker CMD + bash/shell scripting is an excellent choice for examples and living documentation.`deployments/bash/`
