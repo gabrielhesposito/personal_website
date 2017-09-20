@@ -2,16 +2,24 @@
 
 ##### container
 Running a daemon in another container, pairing it with NGINX via a docker volume
-
+using `submodule\remote_syslog2`
 ##### log container
-The two containers share a common volume
+c_server = daemon/service/pool writing to file(s)/pipe(s)
+    
+    docker run --name c_server -v site_logs:/var/log:rw -p 80:80 -d c_server_image:latest
+
+c_driver = `submodule\remote_syslog2\examples\docker`
+
+    docker run --name c_driver -v log_files_yml:/etc/log_files.yml:rw -v site_logs:ro -d c_driver_image:latest
+
+The two containers share a common volume **docker volume ls**
 
     DRIVER              VOLUME NAME
     local               log_files_yml
     local               site_logs
 
 #### SaaS service
-Using [Papertrail](https://papertrailapp.com/ "papertrailapp") to create events based on logs
+Using [Papertrail](https://papertrailapp.com/ "papertrailapp") see ( <https://papertrailapp.com/> ) to create events based on logs
 For example `([^"\\]*(?:\\.[^"\\]*)*)` allows for a filter to be applied on **USER_AGENTS** (and other matching strings), a potential use is  blocking events from a monitoring service.
 
 ## Deployment
