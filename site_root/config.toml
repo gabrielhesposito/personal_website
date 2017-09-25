@@ -1,7 +1,9 @@
-baseURL = "http://172.17.0.2/"
+baseURL = "http://gespo.me/"
 languageCode = "en-us"
 title = "gespo"
 theme = "hugo-theme-nix"
+
+
 
 
 [menu]
@@ -17,12 +19,12 @@ theme = "hugo-theme-nix"
 
 [params]
   GithubID = "gabrielhesposito"
-  #LinkedInID = "your_linkedin"
+  LinkedInID = "gespodotme"
   Name = "gespo"
-  HeaderUsername = "gitusername"
+  HeaderUsername = "gabrielhesposito"
   HeaderHostname = "github"
   Email = "gitusernameplusgithub@gmail.com"
-  About = "No CSS/HTML skills  →  GNU/Linux Engineer ~~~~~ Debian at home, CentOS at work ~~~~~"
+  About = "Hi, I am a passionate  GNU/Linux Engineer. This site is not just a portfolio, it is also an OS automation project focusing on AWS / Docker Security / golang and SaaS monitoring solutions. Email me!"
   ProfilePicture = "/pics/profile_pic.png"
 
 
