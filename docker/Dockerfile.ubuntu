@@ -33,8 +33,8 @@ RUN mkdir -p  /usr/share/nginx/mysiteprod
 COPY default /etc/nginx/sites-available/default
 ##
 ## make an image from desktop
-COPY build/ /tmp/
-RUN cd /tmp/site_root/ && hugo && mv public/* /usr/share/nginx/mysiteprod || echo "build didn't happen or bad dir"
+COPY build/ /tmp
+RUN cd /tmp && hugo && mv public/* /usr/share/nginx/mysiteprod || echo "build didn't happen or bad dir"
 #COPY build/public/ /usr/share/nginx/mysiteprod
 ##
 ## set nginx static content permissions / log permissions for another process/user to read
