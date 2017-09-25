@@ -2,6 +2,9 @@ baseURL = "http://gespo.me/"
 languageCode = "en-us"
 title = "gespo"
 theme = "hugo-theme-nix"
+enableGitInfo = true
+
+
 
 
 [menu]
