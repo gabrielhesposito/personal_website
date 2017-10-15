@@ -1,0 +1,4 @@
+[ubuntu]
+#aws ami stock user
+#ubuntu-trusty-14.04-amd64-server-20170619
+staging.personal.aws ansible_ssh_user=ubuntu

@@ -1,0 +1,6 @@
+---
+- hosts: ubuntu
+  sudo: yes
+  tasks:
+   - name: dump_services
+     command: service --status-all
