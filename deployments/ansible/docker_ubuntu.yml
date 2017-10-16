@@ -1,0 +1,13 @@
+---
+- hosts: ubuntu
+  sudo: yes
+  tasks:
+   - name: dump_services
+     command: service --status-all
+   - name : update_apt
+     apt: update_cache=yes 
+   - name : remove_docker
+     apt:
+        name: docker.io
+        state: absent
+     when: result|succeeded
