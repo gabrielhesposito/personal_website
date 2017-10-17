@@ -1,0 +1,23 @@
+---
+- hosts: ubuntu
+  sudo: yes
+  ##
+  #
+  # sets ami to be clean for alternative docker install
+  #
+  ##
+  tasks:
+   - name: dump_services
+     command: service --status-all
+   - name : update_apt
+     register: result
+     apt: 
+        update_cache: yes 
+   - name : remove_docker
+     apt:
+        name: docker.io
+        state: absent
+        purge: yes
+        autoremove: yes
+        autoclean: yes 
+    # when: result|success

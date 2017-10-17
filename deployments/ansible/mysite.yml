@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu
+  ##
+  #
+  # installs docker
+  #
+  ##
+  roles: 
+      - docker

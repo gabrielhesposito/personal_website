@@ -1,0 +1,16 @@
+---
+- name : docker_ce_dep
+  apt: >
+     name: {{ item }} 
+     state: present 
+     update_cache: yes
+  with_items:
+      - apt-transports-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+
+#pt-transport-https \
+#    ca-certificates \
+#    curl \
+#    software-properties-common
