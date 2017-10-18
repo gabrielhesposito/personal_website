@@ -29,14 +29,16 @@ using bash for deployment is a terrible idea, however the docker CMD + bash/shel
 examples: 
 
 build local push remote
-`sh
+
+```sh
 ./build_image.sh testbuild && ./run_image.sh test:build && ./send_image.sh test:build prod.personal.aws
-`
+```
 run on remote
-`sh
+
+```sh
 docker tag testbuild:test testbuild:bak && docker stop mysite && docker rm mysite && docker run --name mysite -v site_logs:/var/log:rw -p 80:80 -d testbuild:test
 ]
-`
+```
 
 ##### monitoring
 Using an AWS health check to create an alarm if the instance is marked as "unhealth"
