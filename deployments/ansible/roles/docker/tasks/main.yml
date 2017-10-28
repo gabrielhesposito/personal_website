@@ -10,8 +10,3 @@
       - curl
       - software-properties-common
 - import_tasks: docker_ce_install.yml
-
-#pt-transport-https \
-#    ca-certificates \
-#    curl \
-#    software-properties-common
