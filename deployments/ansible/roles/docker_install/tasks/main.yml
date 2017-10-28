@@ -1,0 +1,7 @@
+---
+- import_tasks: clean_apt.yml
+- import_tasks: dependency.yml
+  register: result
+- import_tasks: engine_install.yml
+  when: result.failed == false 
+
