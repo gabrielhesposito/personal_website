@@ -1,4 +1,11 @@
 ---
+#gets python on ami - ubuntu-xenial-16.04-amd64-server-20170721 (ami-cd0f5cb6)
+# https://gist.github.com/gwillem/4ba393dceb55e5ae276a87300f6b8e6f
+- hosts: all
+  gather_facts: False  
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (sudo apt -y update && sudo apt install -y python-minimal)
 - hosts: ubuntu
   ##
   #

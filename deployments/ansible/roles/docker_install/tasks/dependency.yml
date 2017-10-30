@@ -1,11 +1,18 @@
 ---
+#- name : apt_upgrade
+#  become: yes
+#  apt:
+#     cache_valid_time: 
+#     upgrade: dist
 - name : docker_ce_dep
   apt: >
      name: {{ item }} 
-     state: present 
+     state: present
+     upgrade: yes 
      update_cache: yes
   with_items:
       - apt-transports-https
       - ca-certificates
       - curl
       - software-properties-common
+      - python2.7
