@@ -2,7 +2,7 @@
 
 ##### container
 Running a daemon in another container, pairing it with NGINX via a docker volume
-using `submodule\remote_syslog2`
+using `submodule/remote_syslog2`
 ##### log container
 c_server = daemon/service/pool writing to file(s)/pipe(s)
     
@@ -40,6 +40,13 @@ docker tag testbuild:test testbuild:bak && docker stop mysite && docker rm mysit
 ]
 ```
 
+##### CD with Ansible
+using `deployment/ansible/` for host docker provisionment
+```sh
+$ ansible-playbook mysite.yml
+```
+
 ##### monitoring
 Using an AWS health check to create an alarm if the instance is marked as "unhealth"
 `/pics/profile_pic.png` is the end point AWS polls on from multiple regions
+
