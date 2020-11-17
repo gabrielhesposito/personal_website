@@ -1,0 +1,77 @@
+baseURL = "http://gespo.me/"
+languageCode = "en-us"
+title = "gespo"
+theme = "hugo-theme-nix"
+
+
+
+
+[menu]
+  [[menu.header]]
+    name = "this_site"
+    weight = 0
+    url = "https://github.com/gabrielhesposito/personal_website"
+  [[menu.header]]
+    name = "resume"
+    weight = 1
+    url = "/docs/resume.pdf"
+
+
+[params]
+  GithubID = "gabrielhesposito"
+  LinkedInID = "gespodotme"
+  Name = "gespo"
+  HeaderUsername = "gabrielhesposito"
+  HeaderHostname = "github"
+  Email = "gitusernameplusgithub@gmail.com"
+  About = "Hi, I am a passionate  GNU/Linux Engineer. This site is not just a portfolio, it is also an OS automation project focusing on AWS / Docker Security / golang and SaaS monitoring solutions. Email me!"
+  ProfilePicture = "/pics/profile_pic.png"
+
+[deployment]
+# By default, files are uploaded in an arbitrary order.
+# Files that match the regular expressions in the "Order" list
+# will be uploaded first, in the listed order.
+order = [".jpg$", ".gif$"]
+
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "gespo.me"
+# The Go Cloud Development Kit URL to deploy to. Examples:
+# GCS; see https://gocloud.dev/howto/blob/#gcs
+# URL = "gs://<Bucket Name>"
+
+# S3; see https://gocloud.dev/howto/blob/#s3
+# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+URL = "s3://gespo.me?region=us-east-1"
+
+# Azure Blob Storage; see https://gocloud.dev/howto/blob/#azure
+# URL = "azblob://$web"
+
+# You can use a "prefix=" query parameter to target a subfolder of the bucket:
+# URL = "gs://<Bucket Name>?prefix=a/subfolder/"
+
+# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+#cloudFrontDistributionID = <ID>
+
+
+# ... add more [[deployment.targets]] sections ...
+
+
+# [[deployment.matchers]] configure behavior for files that match the Pattern.
+# Samples:
+
+[[deployment.matchers]]
+#  Cache static assets for 20 years.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true

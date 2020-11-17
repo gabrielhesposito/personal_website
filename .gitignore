@@ -1,4 +1,6 @@
 themes
+# dont store builds
+site_root/public/*
 site_root/config.toml.bak
 docker/build
 deployments/ansible/hosts
