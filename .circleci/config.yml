@@ -32,5 +32,6 @@ jobs:
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               cd $HUGO_DIR && hugo deploy
             else
+              cd $HUGO_DIR && hugo deploy 
               echo "Not master branch, dry run only"
             fi 
