@@ -22,6 +22,27 @@ The two containers share a common volume **docker volume ls**
 Using [Papertrail](https://papertrailapp.com/ "papertrailapp") see ( <https://papertrailapp.com/> ) to create events based on logs
 For example `([^"\\]*(?:\\.[^"\\]*)*)` allows for a filter to be applied on **USER_AGENTS** (and other matching strings), a potential use is  blocking events from a monitoring service.
 
+## Build
+CI using CircleCI + github seems like a great option for OS or personal projects. Has a nice gui + notification, cloud hosted and it fits the IaC paradigm resulting in tons of reuse.
+`.circleci/config.yml`
+
+CircleCI relies heavily on containers. Containers within containers.
+you select a docker image and your workload runs on it, so prebaking your dependencies is totally doable
+saving you time on every call to package managers. Plus you can run jobs in parallel and switch images.
+
+```
+ ## define your image like
+docker:
+  - image: cibuilds/hugo:latest
+```
+
+CircleCI  gives you the ability to `ssh` into these images if you hand over $$. 
+Otherwise you'll need to run the images locally and monkey around to diagnose build errors.
+```
+#run the container as root, and use a cmd that wont exit
+docker run -d -u 0  --name foo --entrypoint '/bin/sh' cibuilds/hugo:latest -c 'tail -f /dev/null'
+```
+
 ## Deployment
 
 ##### thoughts 
