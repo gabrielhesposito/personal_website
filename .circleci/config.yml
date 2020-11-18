@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo:latest
-    working_directory: ~/personal_site/site_root
+    working_directory: ~/personal_website/site_root
     environment:
       HUGO_BUILD_DIR: public/
     steps:
