@@ -5,7 +5,7 @@ jobs:
       - image: cibuilds/hugo:latest
     working_directory: ~/personal_website
     environment:
-      HUGO_DIR: site_root
+      HUGO_DIR: site_root/
     steps:
 
       # install git
@@ -24,7 +24,7 @@ jobs:
             pip3 install awscli
 
       # build with Hugo
-      - run: HUGO_ENV=production hugo -v --source $HUGO_DIR -d $HUGO_DIR/public
+      - run: HUGO_ENV=production hugo -v --source site_root/ -d site_root/public
 
       - deploy:
           name: deploy to AWS
