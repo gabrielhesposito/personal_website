@@ -3,9 +3,9 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo:latest
-    working_directory: ~/personal_website/site_root
+    working_directory: ~/personal_website
     environment:
-      HUGO_BUILD_DIR: public/
+      HUGO_DIR: site_root
     steps:
 
       # install git
@@ -24,13 +24,13 @@ jobs:
             pip3 install awscli
 
       # build with Hugo
-      - run: pwd && ls && HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+      - run: HUGO_ENV=production hugo -v --source $HUGO_DIR -d $HUGO_DIR/public
 
       - deploy:
           name: deploy to AWS
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              hugo deploy
+              cd $HUGO_DIR && hugo deploy
             else
               echo "Not master branch, dry run only"
             fi 
