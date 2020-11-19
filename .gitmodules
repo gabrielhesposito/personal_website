@@ -3,7 +3,7 @@
 	url = https://github.com/antwarjs/antwar.git
 [submodule "site_root/themes/hugo-theme-nix"]
 	path = site_root/themes/hugo-theme-nix
-	url = git@github.com:LordMathis/hugo-theme-nix.git
+	url = git@github.com:gabrielhesposito/hugo-theme-nix.git
 [submodule "submodule/remote_syslog2"]
 	path = submodule/remote_syslog2
 	url = git@github.com:gabrielhesposito/remote_syslog2.git
