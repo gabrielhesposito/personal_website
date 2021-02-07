@@ -18,12 +18,14 @@ The two containers share a common volume **docker volume ls**
     local               log_files_yml
     local               site_logs
 
-#### SaaS service
+#### SaaS services
 Using [Papertrail](https://papertrailapp.com/ "papertrailapp") see ( <https://papertrailapp.com/> ) to create events based on logs
 For example `([^"\\]*(?:\\.[^"\\]*)*)` allows for a filter to be applied on **USER_AGENTS** (and other matching strings), a potential use is  blocking events from a monitoring service.
 
-## Build
-CI using CircleCI + github seems like a great option for OS or personal projects. Has a nice gui + notification, cloud hosted and it fits the IaC paradigm resulting in tons of reuse.
+## Build/CI
+
+#### CircleCI + github 
+these free options seems like a great option for OS or personal projects. Nice gui + notifications + cloud hosting and it fits the IaC paradigm resulting in tons of reuse.
 `.circleci/config.yml`
 
 CircleCI relies heavily on containers. Containers within containers.
@@ -45,7 +47,7 @@ docker run -d -u 0  --name foo --entrypoint '/bin/sh' cibuilds/hugo:latest -c 't
 
 ## Deployment
 
-##### thoughts 
+##### Bash 
 using bash for deployment is a terrible idea, however the docker CMD + bash/shell scripting is an excellent choice for examples and living documentation.`deployments/bash/`
 examples: 
 
@@ -61,7 +63,10 @@ docker tag testbuild:test testbuild:bak && docker stop mysite && docker rm mysit
 ]
 ```
 
-##### CD with Ansible
+##### Ansible
+
+Ansible is more flexible option. Easy to read/diagnose.
+
 using `deployment/ansible/` for host docker provisionment
 ```sh
 $ ansible-playbook mysite.yml
