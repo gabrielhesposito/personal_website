@@ -9,7 +9,7 @@ jobs:
     steps:
 
       # install git
-      - run: sudo apt-get install git
+      - run: sudo apt-get update && apt-get install git
 
       # checkout the repository
       - checkout
