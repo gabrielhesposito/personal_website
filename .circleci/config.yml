@@ -9,7 +9,7 @@ jobs:
     steps:
 
       # install git
-      - run: sudo apt-get update && apt-get install git
+      - run: apt-get update && apt-get install git
 
       # checkout the repository
       - checkout
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: install AWS CLI (first install pip, the Python package manager)
           command: |
-            sudo apt-get update && sudo apt-get install -y python3-pip python3-dev build-essential 
+            apt-get update && apt-get install -y python3-pip python3-dev build-essential 
             pip3 install awscli
 
       # build with Hugo
