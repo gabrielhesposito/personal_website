@@ -2,14 +2,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cibuilds/hugo:0.153.3
+      - image: cibuilds/hugo:0.158.0
     working_directory: ~/personal_website
     environment:
       HUGO_DIR: site_root/
     steps:
 
-      # install git
-      - run: sudo apt-get install git
+      # # install git
+      # - run: sudo apt-get install git
 
       # checkout the repository
       - checkout
