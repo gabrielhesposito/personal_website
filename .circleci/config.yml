@@ -24,7 +24,7 @@ jobs:
       #       pip3 install awscli
 
       # build with Hugo
-      - run: HUGO_ENV=production hugo -v --source $HUGO_DIR -d public
+      - run: HUGO_ENV=production hugo build --source site_root/ -d public
 
       - run:
           name: deploy to AWS
