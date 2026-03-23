@@ -1,40 +1,124 @@
-- company: TechCorp Solutions
+- company: MaestroQA
   roles:
-    - role: Senior Software Engineer
+    - role: DevOps Engineer
+      date: 2021 – 2022
+      tools: Terraform, ECS, Go, Python, JavaScript, EC2, CloudWatch, NGINX, Envoy Proxy, IAM, Lambda, IaC
       details: |
-        Lead development of microservices architecture serving 2M+ daily active users.
-        Designed and implemented CI/CD pipelines reducing deployment time by 75%.
-        Mentored team of 5 junior developers and established code review standards.
-        Migrated legacy monolith to cloud-native architecture using Kubernetes and Docker.
-      date: 03.2021 - Present
+        Established IaC repositories and moved services from manual provisioning to fully automated infrastructure.
+        Created reusable Terraform modules for each service.
+        Replaced existing autoscaling groups with a new architecture incorporating Terraform, lifecycle policy via AWS Lambda,
+        monitoring with CloudWatch, and AMI building with EC2 Image Builder.
+        Developed features, handled security, and responded to outages and performance degradation.
 
-- company: DataFlow Systems
-  page: 1
-  roles: 
-    - role: Full Stack Developer
-      tools: React, Node.js, PostgreSQL, AWS
+- company: Miltronics
+  roles:
+    - role: Cloud Engineer (Contractor)
+      date: 2020 – 2021
+      tools: Go, AWS Lambda, CloudFormation, EKS, Helm, Kubernetes, Terraform, GCP, EC2, CloudWatch
       details: |
-        Developed customer-facing web applications using React and Node.js stack.
-        Optimized database queries resulting in 40% performance improvement.
-        Collaborated with UX team to implement responsive design patterns.
-      date: 08.2019 - 03.2021
-    
-    - role: Junior Frontend Developer
-      tools: JavaScript, HTML5, CSS3, Vue.js
-      date: 01.2018 - 08.2019
-      details: |
-        Built interactive user interfaces for internal dashboard applications.
-        Participated in Agile development process and daily stand-ups.
-        Implemented accessibility standards achieving WCAG 2.1 AA compliance.
+        Lead engineer responsible for onboarding new clients and building cloud infrastructure for IoT devices.
+        Deployed AWS environments using CloudFormation/Terraform and AWS CodePipeline.
+        Wrote Lambda functions using the AWS SDK for Go, Serverless, and Terraform.
 
-- company: StartupTech Inc.
+        Testimonial: "Gabriel built out our entire SaaS infra in AWS using EKS, Terraform and Go.
+        I highly recommend anyone looking for a Cloud Engineer to speak with Gabriel."
+        — Daniel Lwaysi, DOE, Miltronics Inc.
+
+- company: Bountysource
+  roles:
+    - role: Open-source Contributor
+      date: 2020 – 2021
+      tools: Docker, JavaScript, Node.js, Linux, Blockchain, Bash, Git
+      details: |
+        Added features to twister-core and twister-lib-js — a P2P blockchain-based application.
+        Fixed Docker build issues to enable new developers to onboard more easily.
+        Created functions to handle account creation on client and server wallets.
+
+- company: Procore
+  roles:
+    - role: DevOps Engineer
+      date: 2019 – 2020
+      tools: HashiCorp, Packer, Terraform, Ansible, EC2, CloudWatch, NGINX, IAM, Burp Suite, OWASP
+      details: |
+        Worked on the legacy Honest Buildings platform, responding to incidents and improving IaC.
+        Designed an RBAC implementation for databases and servers, evaluating open-source models and private vendors.
+        Joined the security team, audited AppSec contractors, and verified OWASP reports.
+
+- company: Honest Buildings
+  roles:
+    - role: DevOps Engineer
+      date: 2019
+      tools: Terraform, Docker, ECS, Kong, Ansible, TypeScript, YAML, CloudWatch, IAM, Lambda, API Gateway
+      details: |
+        Managed AWS infrastructure and deployments for a B2B web application.
+        Researched, designed, and configured an API gateway to provide rate-limiting capabilities.
+        Identified CI/CD gaps and implemented improvements.
+        Leveraged Flyway database migrations to manage previously manual control-data seeding.
+
+- company: Trov
+  roles:
+    - role: DevOps Engineer
+      date: 2017 – 2019
+      tools: Python, Ansible, CloudFormation, Azure DevOps, Docker, EventStore, Datadog, EC2, RDS, IAM, Jenkins
+      details: |
+        Primarily focused on AWS, Python, and Ansible, working in an Agile/Kanban environment.
+        Developed and maintained automation for the EventStore database.
+        Created an automated ephemeral database system for QA teams.
+        Supported a 24/7 on-call global production environment, collaborating with teams across Australia, UK, USA, and Canada.
+        Built and improved Docker infrastructure utilizing ECR repositories.
+
+- company: Wickr
   page: 2
   roles:
-    - role: Software Developer Intern
-      tools: Python, Flask, MongoDB, Git
+    - role: DevOps Engineer
+      date: 2016 – 2017
+      tools: Docker, EC2, Python, Node.js, PHP, Ruby, CloudWatch, NGINX, Redis, RabbitMQ, MySQL, MongoDB, TLS
       details: |
-        Contributed to backend API development for mobile application serving 50k+ users.
-        Implemented automated testing suite achieving 85% code coverage.
-        Participated in code reviews and followed test-driven development practices.
-        Collaborated with cross-functional team using Scrum methodology.
-      date: 06.2017 - 12.2017
+        First DevOps hire; reported directly to the VP of Engineering while embedded with the platform team.
+        Primary engineer on a team that designed and implemented IaaS.
+        Evaluated AWS CloudWatch and ELK stack for SaaS implementation.
+        Created Docker images and containers and accompanying AWS infrastructure for Apache, PHP, MariaDB, Redis, and RabbitMQ.
+
+- company: Ovis Technologies
+  page: 2
+  roles:
+    - role: Senior Perl Programmer (Contract)
+      date: 2016
+      tools: Perl, SFTP, HTML, Linux, Bash, Git
+      details: |
+        Authored Perl modules based on a rigorously defined schema, working directly with senior developers.
+        Contributed to a custom proprietary MVC architecture for web templates and administration panels.
+        Proposed and introduced Git to improve the software development process.
+
+- company: Addteq
+  page: 2
+  roles:
+    - role: Software Developer
+      date: 2015
+      tools: Perl, PHP, MySQL, JavaScript, Apache, Scrum, Agile, Linux, Bash, Git
+      details: |
+        Wrote back-end services in Perl against MySQL; debugged large codebases and traced issues in open-source libraries.
+        Contributed to an internal tool for managing database schema in source control.
+        Created a file-based caching layer via daemons for a monolithic web application.
+
+- company: Group DCA
+  page: 2
+  roles:
+    - role: Software Developer (Internship)
+      date: 2014
+      tools: PHP, Python, MySQL, Oracle SQL, Apache, WordPress, Bash, Linux
+      details: |
+        Worked on a production Oracle database; built PHP scripts to handle vendor-specific data ingestion.
+        Built a PHP portlet to import customer and vendor data into production Oracle databases.
+        Created iMacros to transfer data between CMS systems.
+
+- company: Modern Nephrology
+  page: 2
+  roles:
+    - role: Network & IT
+      date: 2011 – 2013
+      tools: Cisco, Windows, Linux, Google Workspace, VoIP, Healthcare Services
+      details: |
+        Implemented the rollout of a cloud EMR system and integrated it with VoIP and network resources.
+        Established Cisco network equipment and built a managed network for the entire team.
+        Managed workstations and IT security on Windows machines.

@@ -1,92 +1,106 @@
 about:
-  name: Jane Smith
-  tagline: Senior Software Engineer
-  phone: "+1 (555) 123-4567"        # Optional
-  email: jane.smith@email.com       # Optional
-  linkedin: jane-smith              # Optional
+  name: Gabriel Esposito
+  tagline: DevOps Engineer & Software Developer
+  phone: "+1 (211) 111-1111"
+  email: me@gespo.net
+  linkedin: ""       # Add your LinkedIn handle if desired
   links:
-    # Add any link as you like.
-    - title: /in/jane-smith
-      url: https://linkedin.com/in/jane-smith
-      icon: fab fa-linkedin
-    - title: jane-smith
-      url: https://github.com/jane-smith
+    - title: GitHub
+      url: https://github.com/
       icon: fab fa-github
-    - title: Portfolio
-      url: https://janesmith.dev
-      icon: fas fa-globe
   details: |
-    Experienced software engineer with 8+ years developing scalable web applications and cloud infrastructure.
-    Passionate about clean code, system architecture, and mentoring junior developers.
-
-    Proven track record of leading cross-functional teams and delivering high-impact solutions.
-
+    DevOps and platform engineer with 10+ years in the industry, specializing in AWS infrastructure,
+    Docker orchestration (ECS/EKS), and Infrastructure as Code with Terraform and CloudFormation.
+    First DevOps hire at Wickr; experienced in site reliability engineering, monitoring with Datadog
+    and SumoLogic, and building secure, scalable cloud environments from the ground up.
 
 skills:
-  - groupName: Frontend Technologies
+  - groupName: Cloud & Infrastructure
     list:
-      - React - Vue.js - Angular
-      - TypeScript - JavaScript - HTML5/CSS3
+      - Amazon Web Services (AWS) — EC2, ECS, EKS, Lambda, S3, VPC, RDS, CloudWatch, IAM, CloudFormation, API Gateway, Route 53, Certificate Manager, ELB, EMR
+      - Google Cloud Platform (GCP)
+      - Azure
 
-  - groupName: Backend & Infrastructure
+  - groupName: IaC & Orchestration
     list:
-      - Node.js - Python - Java
-      - AWS - Docker - Kubernetes
-      - PostgreSQL - MongoDB - Redis
+      - Terraform — Packer — Ansible — Helm — CloudFormation
+      - Docker — Kubernetes — Containerization — Docker Compose
+      - HashiCorp Sentinel — Vault
 
-  - groupName: Tools & Practices
+  - groupName: Monitoring & Observability
     list:
-      - Git - CI/CD - Terraform
-      - Jest - Cypress - Jenkins
+      - Datadog — SumoLogic — CloudWatch — ELK Stack
 
-interests:
-  - Open Source Contributions
-  - Cloud Architecture
-  - Machine Learning
-  - Tech Mentoring
+  - groupName: Languages
+    list:
+      - Python — Bash — Go — Perl — PHP — Ruby — TypeScript — JavaScript — YAML — HTML — XML — Batch
 
-languages:
-  - name: English
-    level: Native
+  - groupName: Tools & Platforms
+    list:
+      - Linux (Ubuntu, Debian, CentOS) — MacOS — Windows
+      - NGINX — Apache — Envoy Proxy — Kong — HAProxy
+      - Git — GitHub — Jenkins — CI/CD Pipelines
+      - Vim — Tmux — SFTP — VPN — SSH
 
-  - name: Spanish
-    level: Conversational
-    certificates:
-      - "DELE B2 - 2020"
+  - groupName: Databases & Storage
+    list:
+      - PostgreSQL — MySQL — MongoDB — Redis — Oracle SQL — EventStore — RabbitMQ
 
-  - name: French
-    level: Basic
+  - groupName: Methodologies
+    list:
+      - DevOps — DevSecOps — SRE — IaC — RBAC — Scrum — Agile — OWASP
 
-# This will use the default widget: "details-list"
-awards:
-  - title: "Excellence in Software Development"
-    date: "2023"
-    subtitle: "TechCorp Innovation Awards"
+hackathons:
+  - title: "1st Place — Decrypt the Currency (RamHacks)"
+    date: "September 2017"
+    subtitle: "IBM Blockchain Challenge"
     details: |
-      Recognized for outstanding contribution to company-wide code quality initiatives
-      and successful migration of legacy systems to cloud architecture.
+      Built a blockchain app on IBM ONE in an open-source competition sponsored by IBM.
+      Wrote back-end code with Node.js and deployed Docker containers into the cloud.
+      Collaborated with three engineers in the C2 Challenge.
     links:
-      - title: Award Details
-        url: https://example.com/awards/2023
-        icon: fas fa-trophy
-        prefix: "View "
-      - title: Press Release
-        url: https://example.com/news/innovation-awards
-        icon: fas fa-newspaper
-        prefix: "Read "
+      - title: Devpost
+        url: https://devpost.com/software/visualization-of-bitcoin-exchange
+        icon: fas fa-link
+        prefix: "View on "
 
-certificates:
-  - title: "AWS Solutions Architect Professional"
+  - title: "1st Place Overall — Factory Fresh Food App (HackNJIT)"
+    date: "November 2014"
+    subtitle: "NJIT ACM Hackathon"
+    details: |
+      Won first place overall for a chatbot app built on Atlassian software.
+      Led team of three in scope reduction to ensure delivery within 24 hours.
+    links:
+      - title: NJB Magazine
+        url: https://njbmagazine.com/njb-news-now/hacking-innovations-tomorrow-new-jersey-institute-technology-njit-association-computing-machinery/
+        icon: fas fa-link
+        prefix: "Coverage: "
+
+opensource:
+  - title: "Reverse Proxy Examples"
+    subtitle: "github.com/envoy/reverse-proxy-examples"
+    details: |
+      Open source reverse proxy examples enabling customers to build hybrid on-prem/cloud infrastructure.
+      Created to help close the knowledge gap around HTTP proxies and networking security.
+    links:
+      - title: GitHub Repository
+        url: https://github.com/envoy/reverse-proxy-examples
+        icon: fab fa-github
+        prefix: ""
+
+certifications:
+  - title: AWS Certified Cloud Practitioner
     subtitle: Amazon Web Services
-    date: "2023"
-    link: https://aws.amazon.com/certification/ # This link will be on title level.
+    date: "October 2021 – Present"
 
-  - title: "Certified Kubernetes Administrator"
-    subtitle: Cloud Native Computing Foundation
-    date: "2022"
-    link: https://www.cncf.io/certification/cka/
+  - title: AWS Administration Certification
+    subtitle: Amazon Web Services
+    date: "June 2020 – Present"
 
-  - title: "Google Cloud Professional Developer"
-    subtitle: Google Cloud Platform
-    date: "2021"
-    link: https://cloud.google.com/certification/
+  - title: Sumo Logic Search Mastery Certification
+    subtitle: Sumo Logic
+    date: "April 2018 – Present"
+
+  - title: Sumo Logic Fundamentals Certification
+    subtitle: Sumo Logic
+    date: "April 2018 – Present"

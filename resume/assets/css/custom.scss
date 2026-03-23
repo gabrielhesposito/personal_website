@@ -1,56 +1,181 @@
-main.paper {
-  // Comment out to center the title
-  // header {
-  //   justify-content: center;
-  //   .title {
-  //     align-items: center;
-  //   }
-  // }
+// ============================================================
+//  custom.scss — Gabriel Esposito Resume
+//  Goal: stronger visual hierarchy and section differentiation
+// ============================================================
 
-  header .title h1 {
-    // You might want to change the font size if you have a long or a short name
-    //font-size: 4rem;
+// ── Design tokens ──────────────────────────────────────────
+$accent:        #1a5fa8;   // Deep blue — primary accent
+$accent-light:  #e8f0fa;   // Tint for sidebar background
+$accent-mid:    #4a85c8;   // Mid blue for secondary elements
+$rule-color:    #c5d5e8;   // Soft blue-grey rule lines
+$soft-text:     #555;      // Muted labels / dates
+$sidebar-bg:    #f4f7fb;   // Very light blue wash for sidebar
 
-    // You may disable all capitals name with this.
-    //text-transform: none;
+// ── Header ─────────────────────────────────────────────────
+// Name in accent, contact side-block aligned right
+main.paper header {
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid $accent !important;
+
+  .title h1.name {
+    color: $accent;
+    letter-spacing: 0.12rem;
+    font-size: 2.6rem;
   }
 
-  .section-experience p {
-    // If you have a lot of experiences, you can lower the line height
-    // to fit more text on a single page.
-    //line-height: 1.5;
+  .title h2.tagline {
+    color: $accent-mid;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.04rem;
+    text-transform: none;
+  }
+
+  // Contact block (contactOnSide: true — second .title div)
+  .title:last-child {
+    text-align: right;
+    justify-content: center;
+
+    .contact {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: $soft-text;
+
+      a {
+        color: $accent;
+        &:hover { text-decoration: underline; }
+      }
+
+      i {
+        color: $accent-mid;
+        width: 1.1em;
+        text-align: center;
+      }
+    }
   }
 }
 
-.job_title {
-  // font-style: italic;
+// ── Section titles ──────────────────────────────────────────
+// Accent left-border + subtle underline rule for main column
+main.paper .left-column,
+main.paper > .paper-body > .full-width-column {
+  .section-title {
+    color: $accent;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10rem;
+    border-bottom: 1.5px solid $rule-color;
+    padding-bottom: 0.18rem;
+    margin-bottom: 0.55rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid $accent;
+  }
 }
 
-@media print {
-  a {
-    // use if you want to print the url
-    &:not(.non-existing)::after {
-      content: " (" attr(href) ")";
-      margin: 0;
-      font-weight: 400;
-      font-size: 0.75rem;
-      color: scale-color(#000000, $lightness: 30%);
-    }
+// ── Sidebar (right column) ──────────────────────────────────
+main.paper .right-column,
+main.paper aside.right-column {
+  background: $sidebar-bg;
+  border-left: 2px solid $rule-color;
+  padding-left: 0.7rem;
+  padding-top: 0.4rem;
 
-    .item-title & {
-      &::after {
-        content: attr(href);
-        display: block;
-        margin: 0;
-      }
-    }
-
-    .section-publications & {
-      &::after {
-        content: attr(href);
-        display: block;
-        margin: 0 0.75rem;
-      }
-    }
+  .section-title {
+    color: $accent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    border-bottom: 1px solid $rule-color;
+    padding-bottom: 0.15rem;
+    margin-bottom: 0.4rem;
   }
+
+  // Word-list pills (skills)
+  .section-skills .item,
+  .section-word-list .item {
+    display: inline-block;
+    background: $accent-light;
+    color: $accent;
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    margin: 0.1rem 0.1rem 0.1rem 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+// ── Experience: fix technologies row indentation ────────────
+// The template wraps the tools line in a flex-row with an empty <span>
+// spacer on the left, causing right-aligned text that shifts per job.
+// Override: collapse to a plain block so it always starts at the left edge.
+.job-experience .flex-row:has(> span:empty) {
+  display: block;
+
+  span:empty { display: none; }
+
+  .soft-color {
+    display: block;
+    text-align: left;
+  }
+}
+
+// ── Experience: company & role hierarchy ────────────────────
+.job-experience {
+  margin-bottom: 0.9rem;
+
+  // Company name (group header when grouped: false)
+  &.group > .item-title,
+  .item-title {
+    color: $accent;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  // Job title row
+  .job-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  // Date range
+  .soft-color {
+    color: $soft-text;
+    font-size: 0.78rem;
+    font-style: italic;
+  }
+
+  // Technologies tag line
+  .item-info {
+    font-size: 0.75rem;
+    color: $soft-text;
+    margin-top: 0.1rem;
+
+    // Bold the "Technologies:" label
+    strong { color: $accent-mid; font-weight: 600; }
+  }
+
+  // Role description body
+  p, li {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #333;
+  }
+}
+
+// ── Certifications & awards in sidebar ─────────────────────
+.section-certifications {
+  .item-title { font-size: 0.8rem; font-weight: 600; color: #222; }
+  .item-info  { font-size: 0.72rem; color: $soft-text; }
+}
+
+// ── Footer ─────────────────────────────────────────────────
+footer {
+  border-top: 1.5px solid $rule-color;
+  color: $soft-text;
+  font-size: 0.72rem;
+
+  a { color: $accent-mid; }
 }
