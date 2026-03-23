@@ -45,6 +45,12 @@ Otherwise you'll need to run the images locally and monkey around to diagnose bu
 docker run -d -u 0  --name foo --entrypoint '/bin/sh' cibuilds/hugo:latest -c 'tail -f /dev/null'
 ```
 
+## Cloud Services 
+
+##### AWS S3
+
+For hosting a simple html site like this `S3` + `Cloudfront` provide low cost, high availability, automation and security. see the `oidc`, `.circleci` and finally `site_root`/`config` too understand the config involved to deploy to AWS S3. 
+
 ## Deployment
 
 ##### Bash 
