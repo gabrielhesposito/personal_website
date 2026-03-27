@@ -3,23 +3,38 @@ version: '2.1'
 orbs:
   hugo: circleci/hugo@1.4.0
 jobs:
-  deploy:
+  deploySite:
     docker:
       - image: cibuilds/hugo:0.158.0
     steps:
       - attach_workspace:
           at: site_root
       - run: hugo deploy
+  deployResume:
+    docker:
+      - image: cibuilds/hugo:0.158.0
+    steps:
+      - attach_workspace:
+          at: site_root
+      - run: hugo deploy
+
+
 workflows:
-  main:
+  master:
     jobs:
       - hugo/build:
-          html-proofer: true
+          name: site
+          html-proofer: false
           source: site_root/
-          version: 0.141.0
-      - deploy:
+          version: 0.158.0 
+      - hugo/build:
+          name: resume
+          html-proofer: false
+          source: resume/
+          version: 0.158.0 
+      - deploySite:
           filters:
             branches:
               only: fix-deploy
           requires:
-            - hugo/build
+            - site
