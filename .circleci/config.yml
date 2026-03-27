@@ -9,14 +9,14 @@ jobs:
     steps:
       - attach_workspace:
           at: site_root
-      - run: hugo deploy
+      - run: hugo version && hugo deploy
   deployResume:
     docker:
       - image: hugomods/hugo:debian-reg-exts-0.154.5
     steps:
       - attach_workspace:
           at: site_root
-      - run: hugo deploy
+      - run: hugo version && hugo deploy
 
 
 workflows:
