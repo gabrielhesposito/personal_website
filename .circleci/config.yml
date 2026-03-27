@@ -7,16 +7,22 @@ jobs:
     docker:
       - image: hugomods/hugo:reg-ci-0.154.5
     steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
       - attach_workspace:
-          at: site_root
+          at: site_root/
       - run: hugo version && hugo deploy
   deployResume:
     docker:
       - image: hugomods/hugo:reg-ci-0.154.5
     steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
       - attach_workspace:
-          at: site_root
-      - run: hugo version && hugo deploy
+          at: resume/
+      - run: hugo version &&  rm -rf public/* && rm -rf themes/resume-a4/static/favicon/* &&  && hugo deploy
 
 
 workflows:
