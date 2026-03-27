@@ -9,4 +9,4 @@
 	url = git@github.com:gabrielhesposito/remote_syslog2.git
 [submodule "resume/themes/resume-a4.git"]
 	path = resume/themes/resume-a4.git
-	url = https://github.com/mertbakir/resume-a4.git
+	url = git@github.com:mertbakir/resume-a4.git
