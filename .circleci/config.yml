@@ -15,7 +15,7 @@ test:
       - image: cimg/base
     steps:
       - attach_workspace:
-          at: my-site
+          at: site_root/
       - run: hugo deploy
 workflows:
   main:
