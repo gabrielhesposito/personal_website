@@ -5,14 +5,14 @@ orbs:
 jobs:
   deploySite:
     docker:
-      - image: hugomods/hugo:debian-reg-exts-0.154.5
+      - image: hugomods/hugo:reg-ci-0.154.5
     steps:
       - attach_workspace:
           at: site_root
       - run: hugo version && hugo deploy
   deployResume:
     docker:
-      - image: hugomods/hugo:debian-reg-exts-0.154.5
+      - image: hugomods/hugo:reg-ci-0.154.5
     steps:
       - attach_workspace:
           at: site_root
