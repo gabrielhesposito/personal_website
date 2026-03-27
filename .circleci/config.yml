@@ -1,21 +1,14 @@
 #docker pull cibuilds/hugo:0.157.0
 version: '2.1'
 orbs:
-  hugo: cibuilds/hugo:0.158.0
+  hugo: circleci/hugo@1.4.0
 jobs:
   deploy:
     docker:
-      - image: cimg/base
+      - image: cibuilds/hugo:0.158.0
     steps:
       - attach_workspace:
-          at: my-site
-      - run: hugo deploy
-test:
-  docker:
-      - image: cimg/base
-    steps:
-      - attach_workspace:
-          at: site_root/
+          at: site_root
       - run: hugo deploy
 workflows:
   main:
@@ -27,6 +20,6 @@ workflows:
       - deploy:
           filters:
             branches:
-              only: master
+              only: fix-deploy
           requires:
             - hugo/build
