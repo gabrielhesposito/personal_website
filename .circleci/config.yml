@@ -6,7 +6,7 @@ orbs:
 jobs:
   deploySite:
     docker:
-      - image: hugomods/hugo:std-ci-0.154.5
+      - image: hugomods/hugo:reg-ci-0.154.5
     steps:
       - attach_workspace:
           at: .
@@ -14,17 +14,17 @@ jobs:
 
   deployResume:
     docker:
-      - image: hugomods/hugo:std-ci-0.154.5
+      - image: hugomods/hugo:reg-ci-0.154.5
     steps:
       - checkout:
           path: repo/
       - attach_workspace:
           at: repo/resume/public/
-      - run: ls -la . && \
-               cd repo/resume/ && \
+      - run: 
+          command: ls -la . && \
                hugo version && \
-               rm -rf themes/resume-a4/static/favicon/* && \
                HUGO_ENVIRONMENT=production hugo deploy
+          working_directory: repo/resume/
 
 workflows:
   master:
