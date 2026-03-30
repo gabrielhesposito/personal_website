@@ -67,3 +67,4 @@ workflows:
               only: fix-persist-paths
           requires:
             - resume
+            - deploySite
