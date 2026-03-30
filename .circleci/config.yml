@@ -22,8 +22,8 @@ jobs:
           at: repo/resume/public/
       - run: 
           command: ls -la . && \
-               hugo version && \
-               HUGO_ENVIRONMENT=production hugo deploy
+               /bin/hugo version && \
+               HUGO_ENVIRONMENT=production /bin/hugo deploy
           working_directory: repo/resume/
 
 workflows:
