@@ -2,24 +2,23 @@
 version: '2.1'
 orbs:
   hugo: circleci/hugo@1.4.0
+
 jobs:
   deploySite:
     docker:
       - image: hugomods/hugo:reg-ci-0.154.5
     steps:
-      - checkout
       - attach_workspace:
-          at: site_root/
-      - run: hugo version && HUGO_ENVIRONMENT=production hugo deploy
+          at: .
+      - run: cd site_root && hugo version && HUGO_ENVIRONMENT=production hugo deploy
+
   deployResume:
     docker:
       - image: hugomods/hugo:reg-ci-0.154.5
     steps:
-      - checkout
       - attach_workspace:
-          at: resume/
-      - run: hugo version && rm -rf themes/resume-a4/static/favicon/* &&  HUGO_ENVIRONMENT=production hugo deploy
-
+          at: .
+      - run: cd resume && hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
 
 workflows:
   master:
@@ -28,15 +27,26 @@ workflows:
           name: site
           html-proofer: false
           source: site_root/
-          version: 0.154.5 
+          version: 0.154.5
+          persist-to-workspace: true        # ← tell the orb to persist
+
       - hugo/build:
           name: resume
           html-proofer: false
           source: resume/
           version: 0.154.5
+          persist-to-workspace: true        # ← tell the orb to persist
+
       - deploySite:
           filters:
             branches:
               only: fix-deploy
           requires:
             - site
+
+      - deployResume:
+          filters:
+            branches:
+              only: fix-deploy
+          requires:
+            - resume
