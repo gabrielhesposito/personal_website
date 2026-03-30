@@ -6,7 +6,7 @@ orbs:
 jobs:
   deploySite:
     docker:
-      - image: hugomods/hugo:reg-ci-0.154.5
+      - image: hugomods/hugo:ci-0.154.5
     steps:
       - attach_workspace:
           at: .
@@ -14,16 +14,15 @@ jobs:
 
   deployResume:
     docker:
-      - image: hugomods/hugo:reg-ci-0.154.5
+      - image: hugomods/hugo:ci-0.154.5
     steps:
       - checkout:
           path: repo/
       - attach_workspace:
           at: repo/resume/public/
+      - run: 'hugo version'
       - run: 
-          command: ls -la . && \
-               /bin/hugo version && \
-               HUGO_ENVIRONMENT=production /bin/hugo deploy
+          command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/resume/
 
 workflows:
