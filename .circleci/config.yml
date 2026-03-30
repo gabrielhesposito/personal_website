@@ -55,13 +55,13 @@ workflows:
       - deploySite:
           filters:
             branches:
-              only: master
+              only: fix-persist-paths
           requires:
             - site
 
       - deployResume:
           filters:
             branches:
-              only: master
+              only: fix-persist-paths
           requires:
             - resume
