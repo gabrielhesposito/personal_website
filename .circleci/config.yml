@@ -16,9 +16,15 @@ jobs:
     docker:
       - image: hugomods/hugo:reg-ci-0.154.5
     steps:
+      - checkout
       - attach_workspace:
           at: .
-      - run: ls -la public/ && hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
+      - run: ls -la resume_public/ && \
+               cp -r resume_public/* resume/public/ && \
+               cd resume && \
+               hugo version && \
+               rm -rf themes/resume-a4/static/favicon/* && \
+               HUGO_ENVIRONMENT=production hugo deploy
 
 workflows:
   master:
@@ -28,7 +34,9 @@ workflows:
           html-proofer: false
           source: site_root/
           version: 0.154.5
+          hugo-env: production
           persist-to-workspace: true        # ← tell the orb to persist
+          destination: site_root_public/
 
       - hugo/build:
           name: resume
@@ -36,6 +44,9 @@ workflows:
           source: resume/
           version: 0.154.5
           persist-to-workspace: true        # ← tell the orb to persist
+          destination: resume_public/
+          hugo-env: production
+      
 
       # - deploySite:
       #     filters:
