@@ -1,36 +1,67 @@
-version: 2
+#docker pull cibuilds/hugo:0.157.0
+version: '2.1'
+orbs:
+  hugo: circleci/hugo@1.4.0
+
 jobs:
-  build:
+  deploySite:
     docker:
-      - image: cibuilds/hugo:0.158.0
-    working_directory: ~/personal_website
-    environment:
-      HUGO_DIR: site_root/
+      - image: hugomods/hugo:ci-0.154.5
     steps:
+      - checkout:
+          path: repo/
+      - attach_workspace:
+          at: repo/site_root/public/
+      - run: 'hugo version'
+      - run: 
+          command: HUGO_ENVIRONMENT=production hugo deploy
+          working_directory: repo/site_root/
 
-      # # install git
-      # - run: sudo apt-get install git
+  deployResume:
+    docker:
+      - image: hugomods/hugo:ci-0.154.5
+    steps:
+      - checkout:
+          path: repo/
+      - attach_workspace:
+          at: repo/resume/public/
+      - run: 'hugo version'
+      - run: 
+          command: HUGO_ENVIRONMENT=production hugo deploy
+          working_directory: repo/resume/
 
-      # checkout the repository
-      - checkout
+workflows:
+  master:
+    jobs:
+      - hugo/build:
+          name: site
+          html-proofer: false
+          source: site_root/
+          version: 0.154.5
+          hugo-env: production
+          persist-to-workspace: true        # ← tell the orb to persist
+          destination: site_root_public/
 
-      # install git submodules for managing third-party dependencies
-      - run: git submodule sync && git submodule update --init
+      - hugo/build:
+          name: resume
+          html-proofer: false
+          source: resume/
+          version: 0.154.5
+          persist-to-workspace: true        # ← tell the orb to persist
+          destination: resume_public/
+          hugo-env: production
+      
 
-      # - run:
-      #     name: install AWS CLI (first install pip, the Python package manager)
-      #     command: |
-      #       sudo apt-get update && sudo apt-get install -y python3-pip python3-dev build-essential 
-      #       pip3 install awscli
+      - deploySite:
+          filters:
+            branches:
+              only: master
+          requires:
+            - site
 
-      # build with Hugo
-      - run: HUGO_ENV=production hugo build --source site_root/ -d public
-
-      - run:
-          name: deploy to AWS
-          command: |
-            if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              cd $HUGO_DIR && hugo deploy
-            else
-              echo "Not master branch, dry run only"
-            fi 
+      - deployResume:
+          filters:
+            branches:
+              only: master
+          requires:
+            - resume
