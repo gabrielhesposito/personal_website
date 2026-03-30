@@ -2,6 +2,7 @@ baseURL = "https://gespo.me/"
 languageCode = "en-us"
 title = "gespo"
 theme = "hugo-theme-nix"
+publishDir = "site_root_public"
 
 
 

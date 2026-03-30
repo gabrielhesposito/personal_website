@@ -11,9 +11,9 @@ jobs:
       - checkout:
           path: repo/
       - attach_workspace:
-          at: repo/site_root/public/
+          at: repo/site_root/
       - run: 'hugo version'
-      - run: 'ls -la repo/site_root/public/*'
+      - run: 'ls -la repo/site_root/*'
       - run: 
           command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/site_root/
@@ -25,9 +25,9 @@ jobs:
       - checkout:
           path: repo/
       - attach_workspace:
-          at: repo/resume/public/
+          at: repo/resume/
       - run: 'hugo version'
-      - run: 'ls -la repo/resume/public/*'
+      - run: 'ls -la repo/resume/*'
       - run: 
           command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/resume/
@@ -42,7 +42,7 @@ workflows:
           version: 0.154.5
           hugo-env: production
           persist-to-workspace: true        # ← tell the orb to persist
-          destination: .
+          destination: site_root/
 
       - hugo/build:
           name: resume
@@ -50,7 +50,7 @@ workflows:
           source: resume/
           version: 0.154.5
           persist-to-workspace: true        # ← tell the orb to persist
-          destination: resume
+          destination: resume/
           hugo-env: production
       
 
