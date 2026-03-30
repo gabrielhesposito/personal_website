@@ -18,10 +18,11 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - checkout
+      - checkout:
+          path: repo/
       - run: ls -la resume_public/ && \
-               mv resume_public/ resume/public/ && \
-               cd resume && \
+               mv resume_public/ repo/resume/public/ && \
+               cd repo/resume/ && \
                hugo version && \
                rm -rf themes/resume-a4/static/favicon/* && \
                HUGO_ENVIRONMENT=production hugo deploy
