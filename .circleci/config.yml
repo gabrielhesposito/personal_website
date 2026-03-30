@@ -47,3 +47,4 @@ workflows:
               only: fix-persist-paths
           requires:
             - site
+            - resume
