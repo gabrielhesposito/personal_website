@@ -18,7 +18,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: ls -la .&& hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
+      - run: ls -la public/ && hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
 
 workflows:
   master:
