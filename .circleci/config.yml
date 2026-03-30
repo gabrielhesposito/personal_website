@@ -50,7 +50,7 @@ workflows:
           source: resume/
           version: 0.154.5
           persist-to-workspace: true        # ← tell the orb to persist
-          destination: resume_public/
+          destination: resume_public/resume/
           hugo-env: production
       
 
