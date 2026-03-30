@@ -8,9 +8,14 @@ jobs:
     docker:
       - image: hugomods/hugo:ci-0.154.5
     steps:
+      - checkout:
+          path: repo/
       - attach_workspace:
-          at: .
-      - run: cd site_root && hugo version && HUGO_ENVIRONMENT=production hugo deploy
+          at: repo/site_root/public/
+      - run: 'hugo version'
+      - run: 
+          command: HUGO_ENVIRONMENT=production hugo deploy
+          working_directory: repo/site_root/
 
   deployResume:
     docker:
@@ -47,16 +52,16 @@ workflows:
           hugo-env: production
       
 
-      # - deploySite:
-      #     filters:
-      #       branches:
-      #         only: fix-deploy
-      #     requires:
-      #       - site
+      - deploySite:
+          filters:
+            branches:
+              only: master
+          requires:
+            - site
 
       - deployResume:
           filters:
             branches:
-              only: fix-deploy
+              only: master
           requires:
             - resume
