@@ -1,4 +1,6 @@
 themes
+
+.DS_Store
 # dont store builds
 site_root/public/*
 resume/public/*
