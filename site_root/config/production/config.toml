@@ -14,7 +14,7 @@ theme = "hugo-theme-nix"
   [[menu.header]]
     name = "resume"
     weight = 1
-    url = "/resume"
+    url = "/resume/index.html"
 
 
 [params]
