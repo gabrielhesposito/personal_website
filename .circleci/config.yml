@@ -18,19 +18,6 @@ jobs:
           command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/site_root/
 
-  deployResume:
-    docker:
-      - image: hugomods/hugo:ci-0.154.5
-    steps:
-      - checkout:
-          path: repo/
-      - attach_workspace:
-          at: repo/resume/
-      - run: 'hugo version'
-      - run: 'ls -la repo/resume/*'
-      - run: 
-          command: HUGO_ENVIRONMENT=production hugo deploy
-          working_directory: repo/resume/
 
 workflows:
   master:
@@ -50,7 +37,7 @@ workflows:
           source: resume/
           version: 0.154.5
           persist-to-workspace: true        # ← tell the orb to persist
-          destination: resume_public/resume/
+          destination: site_root_public/resume/
           hugo-env: production
       
 
@@ -60,11 +47,3 @@ workflows:
               only: fix-persist-paths
           requires:
             - site
-
-      - deployResume:
-          filters:
-            branches:
-              only: fix-persist-paths
-          requires:
-            - resume
-            - deploySite
