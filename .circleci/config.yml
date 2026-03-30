@@ -16,12 +16,11 @@ jobs:
     docker:
       - image: hugomods/hugo:std-ci-0.154.5
     steps:
-      - attach_workspace:
-          at: .
       - checkout:
           path: repo/
-      - run: ls -la resume_public/ && \
-               mv resume_public/ repo/resume/public/ && \
+      - attach_workspace:
+          at: repo/resume/public/
+      - run: ls -la . && \
                cd repo/resume/ && \
                hugo version && \
                rm -rf themes/resume-a4/static/favicon/* && \
