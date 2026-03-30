@@ -13,7 +13,7 @@ jobs:
       - attach_workspace:
           at: repo/site_root/public/
       - run: 'hugo version'
-      - run: 'ls -la public/*'
+      - run: 'ls -la repo/site_root/public/*'
       - run: 
           command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/site_root/
@@ -27,7 +27,7 @@ jobs:
       - attach_workspace:
           at: repo/resume/public/
       - run: 'hugo version'
-      - run: 'ls -la public/*'
+      - run: 'ls -la repo/resume/public/*'
       - run: 
           command: HUGO_ENVIRONMENT=production hugo deploy
           working_directory: repo/resume/
