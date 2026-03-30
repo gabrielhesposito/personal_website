@@ -18,7 +18,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: cd resume && hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
+      - run: ls -la .&& hugo version && rm -rf themes/resume-a4/static/favicon/* && HUGO_ENVIRONMENT=production hugo deploy
 
 workflows:
   master:
@@ -37,12 +37,12 @@ workflows:
           version: 0.154.5
           persist-to-workspace: true        # ← tell the orb to persist
 
-      - deploySite:
-          filters:
-            branches:
-              only: fix-deploy
-          requires:
-            - site
+      # - deploySite:
+      #     filters:
+      #       branches:
+      #         only: fix-deploy
+      #     requires:
+      #       - site
 
       - deployResume:
           filters:
