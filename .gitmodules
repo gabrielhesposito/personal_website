@@ -7,6 +7,6 @@
 [submodule "submodule/remote_syslog2"]
 	path = submodule/remote_syslog2
 	url = git@github.com:gabrielhesposito/remote_syslog2.git
-[submodule "resume/themes/resume-a4.git"]
-	path = resume/themes/resume-a4.git
+[submodule "resume/themes/resume-a4"]
+	path = resume/themes/resume-a4
 	url = git@github.com:mertbakir/resume-a4.git
