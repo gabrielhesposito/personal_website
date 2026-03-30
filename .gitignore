@@ -3,6 +3,8 @@
 # dont store builds
 site_root/public/*
 resume/public/*
+resume/resume_public/*
+site_root/site_root_public/*
 resume/resources/*
 site_root/config.toml.bak
 docker/build

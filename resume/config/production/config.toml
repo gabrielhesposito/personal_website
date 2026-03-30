@@ -1,4 +1,6 @@
 baseURL = "/resume"
+publishDir = "resume_public"
+
 title = "Gabriel Esposito | Resume"
 languageCode = "en-us"
 disableKinds = [
