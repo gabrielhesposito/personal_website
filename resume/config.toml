@@ -1,0 +1,156 @@
+baseURL = "/resume"
+title = "Gabriel Esposito | Resume"
+languageCode = "en-us"
+disableKinds = [
+  "taxonomy",
+  "term",
+  "page",
+  "section",
+  "RSS",
+  "sitemap",
+  "robotsTXT",
+  "404"
+]
+theme = "resume-a4"
+
+[params]
+useFontAwesome = true
+externalLinkIcon = true
+favicon = true
+css = [ "custom.scss" ]
+
+  [params.header]
+  useFontAwesome = true
+  contactOnSide = true
+  avatar = false
+  contact = true
+  tagline = true
+  links = false
+
+  [[params.pages]]
+  header = true
+
+    [[params.pages.side]]
+    feature = "certifications"
+    title = "Certifications"
+    widget = "details-list"
+
+    [[params.pages.side]]
+    feature = "skills"
+    title = "Skills"
+    widget = "word-list"
+    style = "compact"
+
+    [[params.pages.features]]
+    feature = "about"
+    title = "Summary"
+
+    [[params.pages.features]]
+    feature = "experience"
+
+  [[params.pages]]
+  header = true
+  side = false
+
+    [[params.pages.features]]
+    feature = "experience"
+    title = "Experience (Cont.)"
+
+    [[params.pages.features]]
+    feature = "hackathons"
+    title = "Hackathon Awards"
+    widget = "details-list"
+
+    [[params.pages.features]]
+    feature = "opensource"
+    title = "Open Source"
+    widget = "details-list"
+
+  [params.experience]
+  grouped = false
+
+    [params.experience.tools]
+    show = true
+    title = "Technologies"
+
+  [params.education]
+  useFontAwesome = false
+  externalLinkIcon = false
+  namePrimary = false
+
+    [params.education.location]
+    show = false
+
+    [params.education.details]
+    show = false
+
+  [params.itemTitle]
+  useFontAwesome = false
+  externalLinkIcon = true
+
+  [params.footer]
+  show = true
+  credits = true
+  footnote = "Available for part-time engagements."
+
+    [[params.footer.links]]
+    prefix = "Connect on"
+    title = "LinkedIn"
+    url = "https://linkedin.com/in/"
+    icon = "fab fa-linkedin"
+
+    [[params.footer.links]]
+    prefix = "View on"
+    title = "GitHub"
+    url = "https://github.com/"
+    icon = "fab fa-github"
+
+ ## config to deploy to s3   
+[deployment]
+# By default, files are uploaded in an arbitrary order.
+# Files that match the regular expressions in the "Order" list
+# will be uploaded first, in the listed order.
+order = [".jpg$", ".gif$"]
+
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "gespo.me"
+# The Go Cloud Development Kit URL to deploy to. Examples:
+# GCS; see https://gocloud.dev/howto/blob/#gcs
+# URL = "gs://<Bucket Name>"
+
+# S3; see https://gocloud.dev/howto/blob/#s3
+# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+URL = "s3://amazon-cloudfront-secure-static-site-s3bucketroot-1ro4o2qk0xhjj/resume/?region=us-east-1"
+
+# Azure Blob Storage; see https://gocloud.dev/howto/blob/#azure
+# URL = "azblob://$web"
+
+# You can use a "prefix=" query parameter to target a subfolder of the bucket:
+# URL = "gs://<Bucket Name>?prefix=a/subfolder/"
+
+# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+#cloudFrontDistributionID = <ID>
+
+
+# ... add more [[deployment.targets]] sections ...
+
+
+# [[deployment.matchers]] configure behavior for files that match the Pattern.
+# Samples:
+
+[[deployment.matchers]]
+#  Cache static assets for 20 years.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
