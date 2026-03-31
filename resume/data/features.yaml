@@ -4,11 +4,12 @@ about:
   phone: "+1 (973) - 652 - 1237"
   email: gespodevops@gmail.com
   linkedin: "gespodotme"       # Add your LinkedIn handle if desired
-  
   links:
     - title: GitHub
       url: https://github.com/gabrielhesposito
       icon: fab fa-github
+
+
   details: |
     DevOps and Cloud engineer with 10+ years in the industry, specializing in AWS infrastructure, advanced networking,
     Docker orchestration (ECS/EKS), and Infrastructure as Code with Terraform and CloudFormation.
