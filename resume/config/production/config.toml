@@ -27,7 +27,7 @@ css = [ "custom.scss" ]
   avatar = false
   contact = true
   tagline = true
-  links = false
+  links = true
 
   [[params.pages]]
   header = true

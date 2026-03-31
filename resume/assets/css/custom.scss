@@ -179,3 +179,10 @@ footer {
 
   a { color: $accent-mid; }
 }
+
+// Header contact-links (GitHub, etc.) — match accent color of contact block
+main.paper header .title:last-child .contact-links a {
+  color: $accent;
+
+  i { color: $accent-mid; }
+}
