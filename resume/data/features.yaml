@@ -1,25 +1,24 @@
 about:
   name: Gabriel Esposito
-  tagline: DevOps Engineer & Software Developer
-  phone: "+1 (211) 111-1111"
-  email: me@gespo.net
-  linkedin: ""       # Add your LinkedIn handle if desired
+  tagline: Cloud Engineer & Software Developer
+  phone: "+1 (973) - 652 - 1237"
+  email: gespodevops@gmail.com
+  linkedin: "gespodotme"       # Add your LinkedIn handle if desired
+  
   links:
     - title: GitHub
-      url: https://github.com/
+      url: https://github.com/gabrielhesposito
       icon: fab fa-github
   details: |
-    DevOps and platform engineer with 10+ years in the industry, specializing in AWS infrastructure,
+    DevOps and Cloud engineer with 10+ years in the industry, specializing in AWS infrastructure, advanced networking,
     Docker orchestration (ECS/EKS), and Infrastructure as Code with Terraform and CloudFormation.
-    First DevOps hire at Wickr; experienced in site reliability engineering, monitoring with Datadog
+    Experienced in site reliability engineering, monitoring with Datadog
     and SumoLogic, and building secure, scalable cloud environments from the ground up.
 
 skills:
   - groupName: Cloud & Infrastructure
     list:
-      - Amazon Web Services (AWS) — EC2, ECS, EKS, Lambda, S3, VPC, RDS, CloudWatch, IAM, CloudFormation, API Gateway, Route 53, Certificate Manager, ELB, EMR
-      - Google Cloud Platform (GCP)
-      - Azure
+      - Amazon Web Services (AWS) — Cloudwan, EC2 Image Builder, EC2, ECS, EKS, Lambda, S3, VPC, RDS, CloudWatch, IAM, CloudFormation, API Gateway, Route 53, Certificate Manager, ELB, EMR
 
   - groupName: IaC & Orchestration
     list:
@@ -33,12 +32,12 @@ skills:
 
   - groupName: Languages
     list:
-      - Python — Bash — Go — Perl — PHP — Ruby — TypeScript — JavaScript — YAML — HTML — XML — Batch
+      - Python — Bash — Go — Perl — PHP — YAML — HTML — XML — Batch
 
   - groupName: Tools & Platforms
     list:
       - Linux (Ubuntu, Debian, CentOS) — MacOS — Windows
-      - NGINX — Apache — Envoy Proxy — Kong — HAProxy
+      - NGINX — Apache — Envoy — Kong — HAProxy
       - Git — GitHub — Jenkins — CI/CD Pipelines
       - Vim — Tmux — SFTP — VPN — SSH
 
@@ -92,10 +91,6 @@ certifications:
   - title: AWS Certified Cloud Practitioner
     subtitle: Amazon Web Services
     date: "October 2021 – Present"
-
-  - title: AWS Administration Certification
-    subtitle: Amazon Web Services
-    date: "June 2020 – Present"
 
   - title: Sumo Logic Search Mastery Certification
     subtitle: Sumo Logic
