@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/resume"
 publishDir = "resume_public"
 
 title = "Gabriel Esposito | Resume"
