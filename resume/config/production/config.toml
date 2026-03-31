@@ -1,4 +1,4 @@
-baseURL = "/resume"
+baseURL = "/"
 publishDir = "resume_public"
 
 title = "Gabriel Esposito | Resume"
@@ -98,13 +98,13 @@ css = [ "custom.scss" ]
     [[params.footer.links]]
     prefix = "Connect on"
     title = "LinkedIn"
-    url = "https://linkedin.com/in/"
+    url = "linkedin.com/in/gespodotme"
     icon = "fab fa-linkedin"
 
     [[params.footer.links]]
     prefix = "View on"
     title = "GitHub"
-    url = "https://github.com/"
+    url = "https://github.com/gabrielhesposito"
     icon = "fab fa-github"
 
  ## config to deploy to s3   

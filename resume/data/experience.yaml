@@ -1,3 +1,28 @@
+
+- company: Various Enterprises & Startups
+  roles:
+    - role: Cloud Engineer (Contractor)
+      date: 2020 – Present
+      tools: Go, AWS Lambda, CloudFormation, ECS, EKS, Helm, Kubernetes, Terraform, AWS, CloudWatch, CloudWan, Codepipeline
+      details: |
+        [Toptal Profile](https://www.toptal.com/developers/resume/gabriel-esposito) Successfully implemented IAC  projects in AWS for various Startups and fortune 500 clients. 
+        Notable work examples: custom VPC infra across large AWS organizations (200+ accounts). 
+        Creating custom repositories for deploying terraform, ie to manage observability services (DataDog). 
+        Migrating platforms from on-prem into AWS ECS. Responsibilities also included supporting teams with architecture decisions in AWS and support tasks for development teams.
+- company: Miltronics
+  roles:
+    - role: Cloud Engineer (Contractor)
+      date: 2020 – Present
+      tools: Go, AWS Lambda, CloudFormation, EKS, Helm, Kubernetes, Terraform, GCP, EC2, CloudWatch
+      details: |
+        Lead engineer responsible for onboarding new clients and building cloud infrastructure for IoT devices.
+        Deployed AWS environments using CloudFormation/Terraform and AWS CodePipeline.
+        Wrote Lambda functions using the AWS SDK for Go, Serverless, and Terraform.
+
+        Testimonial: "Gabriel built entire SaaS infra for our clients in AWS using EKS, Terraform and Go.
+        I highly recommend anyone looking for a Cloud Engineer to speak with Gabriel."
+        — Daniel Lwaysi, DOE, Miltronics Inc.
+
 - company: MaestroQA
   roles:
     - role: DevOps Engineer
@@ -9,20 +34,6 @@
         Replaced existing autoscaling groups with a new architecture incorporating Terraform, lifecycle policy via AWS Lambda,
         monitoring with CloudWatch, and AMI building with EC2 Image Builder.
         Developed features, handled security, and responded to outages and performance degradation.
-
-- company: Miltronics
-  roles:
-    - role: Cloud Engineer (Contractor)
-      date: 2020 – 2021
-      tools: Go, AWS Lambda, CloudFormation, EKS, Helm, Kubernetes, Terraform, GCP, EC2, CloudWatch
-      details: |
-        Lead engineer responsible for onboarding new clients and building cloud infrastructure for IoT devices.
-        Deployed AWS environments using CloudFormation/Terraform and AWS CodePipeline.
-        Wrote Lambda functions using the AWS SDK for Go, Serverless, and Terraform.
-
-        Testimonial: "Gabriel built out our entire SaaS infra in AWS using EKS, Terraform and Go.
-        I highly recommend anyone looking for a Cloud Engineer to speak with Gabriel."
-        — Daniel Lwaysi, DOE, Miltronics Inc.
 
 - company: Bountysource
   roles:
@@ -48,14 +59,15 @@
   roles:
     - role: DevOps Engineer
       date: 2019
-      tools: Terraform, Docker, ECS, Kong, Ansible, TypeScript, YAML, CloudWatch, IAM, Lambda, API Gateway
+      tools: Terraform, Docker, ECS, Kong, Ansible, TypeScript, CloudWatch, IAM, Lambda, API Gateway
       details: |
         Managed AWS infrastructure and deployments for a B2B web application.
         Researched, designed, and configured an API gateway to provide rate-limiting capabilities.
         Identified CI/CD gaps and implemented improvements.
-        Leveraged Flyway database migrations to manage previously manual control-data seeding.
+        Leveraged Flyway database migrations to manage previously manual control-data seeding. (**Honest Buildings aquired by Procore** )
 
 - company: Trov
+  page: 2
   roles:
     - role: DevOps Engineer
       date: 2017 – 2019
@@ -94,7 +106,7 @@
   page: 2
   roles:
     - role: Software Developer
-      date: 2015
+      date: 2015 
       tools: Perl, PHP, MySQL, JavaScript, Apache, Scrum, Agile, Linux, Bash, Git
       details: |
         Wrote back-end services in Perl against MySQL; debugged large codebases and traced issues in open-source libraries.
@@ -112,13 +124,13 @@
         Built a PHP portlet to import customer and vendor data into production Oracle databases.
         Created iMacros to transfer data between CMS systems.
 
-- company: Modern Nephrology
-  page: 2
-  roles:
-    - role: Network & IT
-      date: 2011 – 2013
-      tools: Cisco, Windows, Linux, Google Workspace, VoIP, Healthcare Services
-      details: |
-        Implemented the rollout of a cloud EMR system and integrated it with VoIP and network resources.
-        Established Cisco network equipment and built a managed network for the entire team.
-        Managed workstations and IT security on Windows machines.
+# - company: Modern Nephrology
+#   page: 2
+#   roles:
+#     - role: Network & IT
+#       date: 2011 – 2013
+#       tools: Cisco, Windows, Linux, Google Workspace, VoIP, Healthcare Services
+#       details: |
+#         Implemented the rollout of a cloud EMR system and integrated it with VoIP and network resources.
+#         Established Cisco network equipment and built a managed network for the entire team.
+#         Managed workstations and IT security on Windows machines.
