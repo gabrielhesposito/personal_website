@@ -47,7 +47,7 @@
 
 - company: Procore
   roles:
-    - role: DevOps Engineer
+    - role: Site Reliability Engineer
       date: 2019 – 2020
       tools: HashiCorp, Packer, Terraform, Ansible, EC2, CloudWatch, NGINX, IAM, Burp Suite, OWASP
       details: |
@@ -57,7 +57,7 @@
 
 - company: Honest Buildings
   roles:
-    - role: DevOps Engineer
+    - role: Site Reliability Engineer
       date: 2019
       tools: Terraform, Docker, ECS, Kong, Ansible, TypeScript, CloudWatch, IAM, Lambda, API Gateway
       details: |
